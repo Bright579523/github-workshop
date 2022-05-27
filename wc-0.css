@@ -1,0 +1,160 @@
+:root{
+    --text-menuPoint:white;
+    --text-background:rgb(175, 118, 250);
+    --text-background-2:rgba(248, 83, 253, 0.87);
+    --background:rgb(155, 253, 224);
+    --slide:rgb(155, 253, 224);
+    --icon:black;
+
+}
+[data-theme="animation"]{
+    --text-menuPoint:rgb(94, 30, 30);
+    --text-background:rgb(255, 158, 174);
+    --text-background-2:rgba(22, 94, 32, 0.87);
+    --background:rgb(253, 222, 155);
+    --slide:rgb(253, 222, 155);
+    --icon:rgb(210, 115, 248);
+}
+
+*{
+    box-sizing: border-box;
+    font-family: 'Indie Flower', cursive;
+    scroll-behavior: smooth;
+}
+body {
+    
+    background-color: var(--background);
+    /* background-color: #aa7dee; */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23fffab1' fill-opacity='0.4'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+    margin: 0;
+    color: var(--text-background);
+}
+h1{
+    font-size: 80px;
+    margin-bottom: 0;
+}
+section{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h2{
+    color: var(--text-background-2);
+    font-size: 40px;
+    font-weight: normal;
+}
+.title{
+    text-align: center;
+}
+nav{
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    font-size: 17px;
+    background-color: #fc6363;
+    color: white;
+    font-family: 'Exo 2', sans-serif;
+    padding: 1em;
+}
+a{
+    padding: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 3px solid transparent;
+}
+a:hover,a:focus{
+    text-decoration: underline;
+    color: var(--text-menuPoint);
+}
+.theme-switch-container{
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    position: fixed;
+    right: 25px;
+    top: 5px;
+}
+.theme-switch-container span{
+    margin-right: 5px;
+    font-size: 1rem;
+}
+.toggle-light{
+    position: relative;
+    top: 4px;
+    right: 5px;
+    color: rgb(252, 240, 240);
+}
+.theme-switch{
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+.theme-switch input{
+    display: none;
+}
+.slider{
+    background: var(--slide);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.4s;
+}
+.slider::before{
+    background: #f79b23;
+    content: "";
+    bottom: 4px;
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: 0.4s;
+    width: 26px;
+}
+/* * เมื่อทำการติ๊ก check ที่กล่องด้านหน้า */
+    input:checked +.slider::before{
+    transform: translateX(26px);
+}
+.slider.round{
+    border-radius: 34px;
+}
+.slider.round::before{
+    border-radius: 50%;
+}
+.fas{
+    font-size: 25px;
+    color: rgb(235, 22, 171);
+}
+
+section .fas{
+    font-size: 80px;
+    margin: 50px;
+    color: var(--icon);
+    cursor: pointer;
+}
+
+section.project h1{
+    color: rgb(233, 66, 15);
+}
+section.project h2{
+    color: rgb(230, 215, 18);
+}
+
+.project-container{
+    display: flex;
+}
+.image-container{
+    border: 1px solid var(--text-background);
+    border-radius: 7px;
+    padding: 10px 20px;
+}
+img{
+    width: 500px;
+    height: 400px;
+    padding: 10px;
+}
+
